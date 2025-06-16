@@ -5,10 +5,10 @@
 #define HAVE_DLFCN_H 1
 
 /* Have 64-bit __sync_bool_compare_and_swap() and friends. */
-#define HAVE_GCC_64BIT_ATOMIC_OPS 1
+#undef HAVE_GCC_64BIT_ATOMIC_OPS
 
 /* Have 32-bit __sync_bool_compare_and_swap() and friends. */
-#define HAVE_GCC_ATOMIC_OPS 1
+#undef HAVE_GCC_ATOMIC_OPS
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
@@ -20,7 +20,7 @@
 #define HAVE_LIBPNG 1
 
 /* Define to 1 if you have the `pthread' library (-lpthread). */
-#define HAVE_LIBPTHREAD 1
+#undef HAVE_LIBPTHREAD
 
 /* Define to 1 if you have the `xml2' library (-lxml2). */
 #define HAVE_LIBXML2 1
@@ -50,7 +50,7 @@
 #define HAVE_SYS_TYPES_H 1
 
 /* Define to 1 if you have the <unistd.h> header file. */
-#define HAVE_UNISTD_H 1
+#undef HAVE_UNISTD_H
 
 /* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
@@ -90,3 +90,7 @@
 
 /* Define to `unsigned int' if <sys/types.h> does not define. */
 /* #undef size_t */
+
+#define GIT_REV "develop"
+
+#define PACKAGE_DATA_DIR "."

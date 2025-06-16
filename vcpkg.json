@@ -1,0 +1,12 @@
+{
+  "$schema": "https://github.com/microsoft/vcpkg-tool/blob/3bc494764599acf9e431accdae1ac00a4dd0faa1/docs/vcpkg.schema.json",
+  "name": "flam3",
+  "description": "the original fractal flame renderer and genetic language",
+  "version-semver": "3.1.1",
+  "dependencies": [
+    "libpng",
+    "ijg-libjpeg",
+    "libxml2",
+    "zlib"
+  ]
+}

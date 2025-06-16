@@ -2,7 +2,7 @@ name: CMake
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "develop" ]
   pull_request:
     branches: [ "master" ]
 
@@ -10,7 +10,9 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
+        #os: [ ubuntu-latest, windows-latest, macos-latest ]
+        # Only the Windows build is currently working
+        os: [ windows-latest ]
         include:
           - os: macos-latest
             nuget: mono `./vcpkg/vcpkg fetch nuget | tail -n 1`

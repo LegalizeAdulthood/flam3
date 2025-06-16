@@ -39,20 +39,18 @@ add_library(flam3
 target_include_directories(flam3 PUBLIC .)
 target_link_libraries(flam3 PUBLIC JPEG::JPEG PNG::PNG LibXml2::LibXml2 ZLIB::ZLIB Ws2_32)
 target_folder(flam3 "Libraries")
-add_executable(flam3-animate flam3-animate.c)
-target_link_libraries(flam3-animate PRIVATE flam3)
-target_folder(flam3-animate "Applications")
-add_executable(flam3-convert flam3-convert.c)
-target_link_libraries(flam3-convert PRIVATE flam3)
-target_folder(flam3-convert "Applications")
-add_executable(flam3-genome flam3-genome.c)
-target_link_libraries(flam3-genome PRIVATE flam3)
-target_folder(flam3-genome "Applications")
-add_executable(flam3-render flam3-render.c)
-target_link_libraries(flam3-render PRIVATE flam3)
-target_folder(flam3-render "Applications")
 
-vs_startup_project(flam3)
+function(add_tool name)
+    add_executable(${name} ${name}.c)
+    target_link_libraries(${name} PRIVATE flam3)
+    target_folder(${name} "Tools")
+endfunction()
+add_tool(flam3-animate)
+add_tool(flam3-convert)
+add_tool(flam3-genome)
+add_tool(flam3-render)
+
+vs_startup_project(flam3-render)
 
 misc_target(FILES
     "CMakePresets.json"
